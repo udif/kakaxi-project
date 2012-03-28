@@ -65,7 +65,7 @@ long long int usecDiff(struct timeval* time_stop, struct timeval* time_start)
 }
 
 
-#define MAX_PORT_NUM (24*32)
+#define MAX_PORT_NUM 1		//(24*32)
 int main (int argc, char *argv[]) {
 
 	int sockfd[MAX_PORT_NUM];
@@ -102,22 +102,9 @@ int main (int argc, char *argv[]) {
 	char qos_conf[100];
 	char key[80];
 	int rv;
-	//unsigned int tmp_value;
-
-
 
 	unsigned char test_buff[188*7];
 	unsigned char * p = test_buff;
-
-
-
-	//unsigned int rate[MAX_PORT_NUM];
-	//unsigned int rate_num = 0;		//²»Í¬ bps
-
-	//unsigned int j,m,n;
-
-	//char ts_file_tmp[MAX_PORT_NUM];
-	//unsigned int file_num = 0;
 	
 	char* config_file; 
 
