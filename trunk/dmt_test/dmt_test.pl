@@ -81,10 +81,9 @@ sub send_packet{
 					$num = ($n)%($new_cfg->{global}{mac_num});
 				}
 			}
-			my $my_packet = $local_mac . $new_cfg->{global}{"mac_$num"} . " " . $opt_code . $tpacket;
+			my $my_packet = $new_cfg->{global}{"mac_$num"} . " " . $opt_code . $tpacket;
 			$packet = pack("C*", map{hex} split(/\s+/, $my_packet));
 			Net::Pcap::sendpacket($pcap, $packet);
-			sleep 1;
 		}
 	} else {
 		#generate_clash_mac();
@@ -103,10 +102,9 @@ sub send_packet{
 					$num = ($lop)%($new_cfg->{global}{mac_num});
 				}
 			}
-			my $my_packet = $local_mac . $new_cfg->{global}{"mac_$num"} . " " . $opt_code . $tpacket;
+			my $my_packet = $new_cfg->{global}{"mac_$num"} . " " . $opt_code . $tpacket;
 			$packet = pack("C*", map{hex} split(/\s+/, $my_packet));
 			Net::Pcap::sendpacket($pcap, $packet);
-			sleep 1;
 			$lop++;
 		}
 	}
@@ -449,7 +447,7 @@ sub change_pack{
 	my $a6 = sprintf("%02x", ($change_mac>>16)&0xff);
 	my $a7 = sprintf("%02x", ($change_mac>>24)&0xff);
 
-	my $aa = $a7 . " " . $a6 . " " . $a5 . " " . $a4 . " 22 44 \n"; 
+	my $aa = $a7 . " " . $a6 . " " . $a5 . " " . $a4 . " 22 44 " . $a7 . " " . $a6 . " " . $a5 . " " . $a4 . " 33 44 \n"; 
 	#my $my_packet = $local_mac . $aa . $opt_code . $tpacket;
 	return $aa;
 }
