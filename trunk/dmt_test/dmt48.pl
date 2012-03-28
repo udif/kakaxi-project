@@ -93,18 +93,17 @@ sub send_packet{
 
 	my $packet;
 	srand;
-	#
+	
+	creat_file();
 	my $mac_file=dirname($0)."/mac.conf";
 	my $new_cfg = ini::ini_parser_file($mac_file);
 		
 	if($main->rb_once->Checked()){
-		loop_y();
+		#loop_y();
 		foreach my $n (0..($main->tf_send_times->Text()-1)){
 			my $num;
 			if($main->rb_random->Checked()){
-				
 				$num = int(rand($new_cfg->{global}{mac_num}));
-				print $num . "\n";
 			}else{
 				if($n < $new_cfg->{global}{mac_num}){
 					$num = $n;
@@ -112,34 +111,35 @@ sub send_packet{
 					$num = ($n)%($new_cfg->{global}{mac_num});
 				}
 			}
-			my $my_packet = $local_mac . $new_cfg->{global}{"mac_$num"} . " " . $opt_code . $tpacket;
+			my $str = $new_cfg->{global}{"mac_$num"};
+			my $my_mac = substr($str,0,2) . " " . substr($str,2,2) . " " . substr($str,4,2) . " " . substr($str,6,2) . " " . substr($str,8,2) . " " . substr($str,10,2) . " ";
+			my $my_packet = $my_mac . " " . $my_mac . " " . $opt_code . $tpacket;
 			$packet = pack("C*", map{hex} split(/\s+/, $my_packet));
 			Net::Pcap::sendpacket($pcap, $packet);
 		}
+		print "send packet ok";
 	} else {
-		creat_file();
-	}
-}
-=pod		
-		my $lop = 0;
+		#substr($str,0,2);
+		my $num;
 		while(1){
-			my $num;
 			if($main->rb_random->Checked()){
 				$num = int(rand($new_cfg->{global}{mac_num}));
-				print $num . "\n";
-			}else{
-				if($lop < $new_cfg->{global}{mac_num}){
-					$num = $lop;
-				}else{
-					$num = ($lop)%($new_cfg->{global}{mac_num});
-				}
 			}
-			my $my_packet = $local_mac . $new_cfg->{global}{"mac_$num"} . " " . $opt_code . $tpacket;
+			my $str = $new_cfg->{global}{"mac_$num"};
+			my $my_mac = substr($str,0,2) . " " . substr($str,2,2) . " " . substr($str,4,2) . " " . substr($str,6,2) . " " . substr($str,8,2) . " " . substr($str,10,2) . " ";
+			
+			my $my_packet = $my_mac . " " . $my_mac . " " . $opt_code . $tpacket;
 			$packet = pack("C*", map{hex} split(/\s+/, $my_packet));
 			Net::Pcap::sendpacket($pcap, $packet);
-			$lop++;
+			$num++;
+			if($num > 99999){
+				$num = 0;
+			}
 		}
-=cut
+		
+	}
+}
+
 
 
 
@@ -178,6 +178,7 @@ sub loop_y{
 	open MAC_TABLE,">$mac_file";
 	binmode MAC_TABLE;
 	my $head = <<HEAD;
+[global]
 HEAD
 	
 	foreach my $k (0..11){
@@ -341,6 +342,7 @@ HEAD
 		}
 		$head .= "\n";
 	}
+	$head .= "mac_num = 100000\n";
 	print MAC_TABLE $head;
 	close MAC_TABLE;
 	print "creat mac file ok\n";

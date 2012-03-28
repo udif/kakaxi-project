@@ -19,6 +19,9 @@ and Ethernet hardware addresses supplied by the user.
 #include <netinet/ip_icmp.h> 
 #include <linux/if_ether.h> 
 
+#include "vns_config.h"
+#include "vns_list.h"
+
 #define ETH_HW_ADDR_LEN 6  
 #define IP_ADDR_LEN 4  
 #define ARP_FRAME_TYPE 0x0806  
@@ -48,20 +51,30 @@ struct arp_packet
   u_char padding[18];  
 };  
 
+	
+
+
 void die (char *);  
 void get_ip_addr (struct in_addr *, char *);  
 void get_hw_addr (char *, char *);  
 
 int main (int argc, char * argv[])  
 {  
-  struct in_addr src_in_addr, targ_in_addr;  
-  struct arp_packet pkt;  
-  struct sockaddr sa;  
-  int sock;  
-  int j,number;
-  if (argc != 6)
-    die(usage);  
-  
+	struct sockaddr_in addr;
+	struct in_addr src_in_addr, targ_in_addr;  
+	struct arp_packet pkt;  
+	struct sockaddr sa;  
+	int sock;  
+	int j,number;
+	if (argc != 6)
+		die(usage);  
+
+	memset(&addr, 0, sizeof(addr));
+	
+	addr.sin_family = AF_INET;
+	addr.sin_addr.s_addr = inet_addr(argv[2]);
+
+
   sock = socket(AF_INET, SOCK_PACKET, htons(ETH_P_RARP));  
   if (sock < 0)
   {
