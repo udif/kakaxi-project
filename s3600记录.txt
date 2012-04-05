@@ -1,0 +1,945 @@
+[blue-link-test-3layer]int vlan 1 
+[blue-link-test-3layer-Vlan-interface1]ip add 192.168.8.1 255.255.255.0
+[blue-link-test-3layer-Vlan-interface1]quit
+[blue-link-test-3layer]local-user admin
+New local user added.
+[blue-link-test-3layer-luser-admin]password simple admin
+[blue-link-test-3layer-luser-admin]service-type telnet level 3
+[blue-link-test-3layer-luser-admin]quit
+[blue-link-test-3layer]user vty 0 4
+[blue-link-test-3layer-ui-vty0-4]auth s
+[blue-link-test-3layer-ui-vty0-4]quit
+[blue-link-test-3layer]
+<blue-link-test-3layer>save
+The configuration will be written to the device.			
+Are you sure?[Y/N]y
+Please input the file name(*.cfg)(To leave the existing filename 
+ unchanged press the enter key):20120106a
+ Invalid file name!
+<blue-link-test-3layer>save
+The configuration will be written to the device.			
+Are you sure?[Y/N]y
+Please input the file name(*.cfg)(To leave the existing filename 
+ unchanged press the enter key):
+Now saving current configuration to the device.	
+Saving configuration. Please wait...
+......
+ Unit1 save configuration flash:/config.cfg successfully
+
+<blue-link-test-3layer>
+%Apr  2 00:05:26:745 2000 blue-link-test-3layer CFM/3/CFM_LOG:- 1 -Unit1 saved configuration successfully.
+#Apr  2 00:05:49:107 2000 blue-link-test-3layer L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.4(linkUp): portIndex is 4227634, ifAdminStatus is 1, ifOperStatus is 1
+
+#Apr  2 00:05:49:338 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.4(linkUp) Interface 95 is Up
+#Apr  2 00:05:49:479 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.4(linkUp) Interface 6431 is Up
+#Apr  2 00:05:49:620 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.4(linkUp) Interface 6439 is Up
+%Apr  2 00:05:49:761 2000 blue-link-test-3layer L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/2 is UP 
+
+%Apr  2 00:05:49:901 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface9 is UP 
+
+%Apr  2 00:05:50:042 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface9 is UP  
+
+%Apr  2 00:05:50:192 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface801 is UP 
+
+%Apr  2 00:05:50:333 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface801 is UP  
+
+%Apr  2 00:05:50:494 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface802 is UP 
+
+%Apr  2 00:05:50:634 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface802 is UP  
+
+#Apr  2 00:06:29:131 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.7.0.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 11.0.22.1 
+	 IfState = 5 
+
+#Apr  2 00:06:29:432 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.226.80.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 11.0.22.1 
+	 IfState = 5 
+
+<blue-link-test-3layer>reboot
+ Start to check configuration with next startup configuration file, 
+ please wait.........Checking is finished! 
+ This will reboot device. Continue? [Y/N] y
+#Apr  2 00:07:20:327 2000 blue-link-test-3layer COMMONSY/5/REBOOT:- 1 -
+ Reboot Fabric by command. 
+
+<blue-link-test-3layer>
+%Apr  2 00:07:24:327 2000 blue-link-test-3layer DEV/5/DEV_LOG:- 1 -
+Switch is rebooting...
+Starting......
+
+
+
+            ***********************************************************
+            *                                                         *
+            *         H3C S3600-28P-EI BOOTROM, Version 604           *
+            *                                                         *
+            ***********************************************************
+
+            Copyright(c) 2004-2010 Hangzhou H3C Technologies Co., Ltd.
+            Creation date   : Mar  9 2010, 19:16:10
+            CPU Clock Speed : 200MHz
+            BUS Clock Speed : 33MHz
+            Memory Size     : 64MB
+            Mac Address     : 3ce5a6748657
+
+
+Press Ctrl-B to enter Boot Menu... 0
+Auto-booting...
+Decompress Image...................................................................................................................................................................................................................................................................................................................................................................................................................................................................OK!
+Starting at 0x80100000...
+
+
+
+User interface aux0 is available.
+
+
+
+Press ENTER to get started.
+<blue-link-test-3layer>
+%Apr  1 23:56:38:633 2000 blue-link-test-3layer SHELL/5/LOGIN:- 1 - Console(aux0) in unit1 login
+<blue-link-test-3layer>
+<blue-link-test-3layer>
+<blue-link-test-3layer>
+#Apr  2 00:02:21:145 2000 blue-link-test-3layer L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.3(linkDown): portIndex is 4227634, ifAdminStatus is 1, ifOperStatus is 2
+
+#Apr  2 00:02:21:376 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.3(linkDown) Interface 95 is Down
+#Apr  2 00:02:21:517 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.3(linkDown) Interface 6431 is Down
+#Apr  2 00:02:21:668 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.3(linkDown) Interface 6439 is Down
+#Apr  2 00:02:21:819 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.7.0.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 1 
+
+#Apr  2 00:02:22:120 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.226.80.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 1 
+
+%Apr  2 00:02:22:421 2000 blue-link-test-3layer L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/2 is DOWN 
+
+%Apr  2 00:02:22:562 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface9 is DOWN 
+
+%Apr  2 00:02:22:703 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface9 is DOWN  
+
+%Apr  2 00:02:22:864 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface801 is DOWN 
+
+%Apr  2 00:02:23:014 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface801 is DOWN  
+
+%Apr  2 00:02:23:175 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface802 is DOWN 
+
+%Apr  2 00:02:23:326 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface802 is DOWN  
+
+<blue-link-test-3layer>sys
+System View: return to User View with Ctrl+Z.
+[blue-link-test-3layer]loacl-user admin
+                       ^
+ % Unrecognized command found at '^' position.
+[blue-link-test-3layer]local-user admin
+[blue-link-test-3layer-luser-admin]server-type telnet level 3
+                                   ^
+ % Unrecognized command found at '^' position.
+[blue-link-test-3layer-luser-admin]service-type telnet level 3
+[blue-link-test-3layer-luser-admin]password simple admin
+[blue-link-test-3layer-luser-admin]quit
+[blue-link-test-3layer]undo ip http shutdown
+HTTP server is alive.
+[blue-link-test-3layer]
+#Apr  2 00:06:19:508 2000 blue-link-test-3layer L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.4(linkUp): portIndex is 4227634, ifAdminStatus is 1, ifOperStatus is 1
+
+#Apr  2 00:06:19:739 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.4(linkUp) Interface 95 is Up
+#Apr  2 00:06:19:880 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.4(linkUp) Interface 6431 is Up
+#Apr  2 00:06:20:021 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.4(linkUp) Interface 6439 is Up
+%Apr  2 00:06:20:161 2000 blue-link-test-3layer L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/2 is UP 
+
+%Apr  2 00:06:20:302 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface9 is UP 
+
+%Apr  2 00:06:20:443 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface9 is UP  
+
+%Apr  2 00:06:20:593 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface801 is UP 
+
+%Apr  2 00:06:20:734 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface801 is UP  
+
+%Apr  2 00:06:20:894 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface802 is UP 
+
+%Apr  2 00:06:21:035 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface802 is UP  
+
+#Apr  2 00:06:59:548 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.226.80.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 5 
+
+#Apr  2 00:06:59:849 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.7.0.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 5 
+
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+#Apr  2 00:08:52:724 2000 blue-link-test-3layer L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.3(linkDown): portIndex is 4227634, ifAdminStatus is 1, ifOperStatus is 2
+
+#Apr  2 00:08:52:955 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.3(linkDown) Interface 95 is Down
+#Apr  2 00:08:53:096 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.3(linkDown) Interface 6431 is Down
+#Apr  2 00:08:53:247 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.3(linkDown) Interface 6439 is Down
+#Apr  2 00:08:53:398 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.7.0.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 1 
+
+#Apr  2 00:08:53:700 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.226.80.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 1 
+
+%Apr  2 00:08:54:001 2000 blue-link-test-3layer L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/2 is DOWN 
+
+%Apr  2 00:08:54:142 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface9 is DOWN 
+
+%Apr  2 00:08:54:282 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface9 is DOWN  
+
+%Apr  2 00:08:54:443 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface801 is DOWN 
+
+%Apr  2 00:08:54:594 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface801 is DOWN  
+
+%Apr  2 00:08:54:754 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface802 is DOWN 
+
+%Apr  2 00:08:54:905 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface802 is DOWN  
+
+[blue-link-test-3layer]dis cu
+#
+ sysname blue-link-test-3layer
+#
+ ip forward-broadcast
+#
+radius scheme system
+#
+domain system
+#
+local-user admin
+ password simple admin
+ service-type telnet
+ level 3
+local-user root
+ password simple bluelink
+ service-type telnet terminal
+ level 3
+#
+acl number 3000
+ rule 0 deny IP source 11.0.22.0 0.0.0.255 destination 10.7.0.0 0.0.255.255
+ rule 1 deny IP source 11.0.22.0 0.0.0.255 destination 10.226.80.0 0.0.7.255
+acl number 3001
+ rule 0 deny IP source 10.7.0.0 0.0.255.255 destination 11.0.22.0 0.0.0.255
+acl number 3002
+ rule 0 deny IP source 10.226.80.0 0.0.7.255 destination 11.0.22.0 0.0.0.255
+#                                         
+vlan 1                                    
+#                                         
+vlan 9                                    
+ description EOC-manage                   
+#                                         
+vlan 801                                  
+ description VOD                          
+#                                         
+vlan 802                                  
+ description IPQAM                        
+#                                         
+vlan 803                                  
+ description VOD                          
+#                                         
+interface Vlan-interface1                 
+ ip address 192.168.8.1 255.255.255.0     
+#                                         
+interface Vlan-interface9                 
+ description EOC-manage                   
+ ip address 11.0.22.1 255.255.255.0       
+#                                         
+interface Vlan-interface801               
+ description VOD                          
+ ip address 10.7.0.1 255.255.0.0          
+#                                         
+interface Vlan-interface802               
+ description IPQAM                        
+ ip address 10.226.80.1 255.255.248.0     
+#                                         
+interface Aux1/0/0                        
+#                                         
+interface Ethernet1/0/1                   
+ port link-type trunk                     
+ undo port trunk permit vlan 1            
+ port trunk permit vlan 9 801 to 802      
+ description IPG1                         
+#                                         
+interface Ethernet1/0/2                   
+ port link-type trunk                     
+ undo port trunk permit vlan 1            
+ port trunk permit vlan 9 801 to 802      
+ packet-filter inbound ip-group 3000 rule 1
+ packet-filter inbound ip-group 3000 rule 0
+ packet-filter outbound ip-group 3002 rule 0
+ packet-filter outbound ip-group 3001 rule 0
+ description IPG2                         
+#                                         
+interface Ethernet1/0/3                   
+ port link-type trunk                     
+ undo port trunk permit vlan 1            
+ port trunk permit vlan 9 801 to 802      
+ packet-filter inbound ip-group 3000 rule 1
+ packet-filter inbound ip-group 3000 rule 0
+ packet-filter outbound ip-group 3002 rule 0
+ packet-filter outbound ip-group 3001 rule 0
+ description IPG3                         
+#                                         
+interface Ethernet1/0/4                   
+ port link-type trunk                     
+ undo port trunk permit vlan 1            
+ port trunk permit vlan 9 801 to 802      
+ packet-filter inbound ip-group 3000 rule 1
+ packet-filter inbound ip-group 3000 rule 0
+ packet-filter outbound ip-group 3002 rule 0
+ packet-filter outbound ip-group 3001 rule 0
+ description IPG4                         
+#                                         
+interface Ethernet1/0/5                   
+ port access vlan 801                     
+ description TO-VOD                       
+#                                         
+interface Ethernet1/0/6                   
+ port access vlan 801                     
+ description IPQAM                        
+#                                         
+interface Ethernet1/0/7                   
+ port access vlan 9                       
+ packet-filter inbound ip-group 3000 rule 1
+ packet-filter inbound ip-group 3000 rule 0
+ packet-filter outbound ip-group 3001 rule 0
+ packet-filter outbound ip-group 3002 rule 0
+ description IPG-SERVER                   
+#                                         
+interface Ethernet1/0/8                   
+ port access vlan 801                     
+ description TEST-PC                      
+#                                         
+interface Ethernet1/0/9                   
+ port access vlan 801                     
+ description TEST-PC                      
+#                                         
+interface Ethernet1/0/10                  
+ port access vlan 801                     
+ description TEST-PC                      
+#                                         
+interface Ethernet1/0/11                  
+ port access vlan 801                     
+ description TEST-PC                      
+#                                         
+interface Ethernet1/0/12                  
+ port access vlan 801                     
+ description TEST-PC                      
+#                                         
+interface Ethernet1/0/13                  
+#                                         
+interface Ethernet1/0/14                  
+#                                         
+interface Ethernet1/0/15                  
+#                                         
+interface Ethernet1/0/16                  
+#                                         
+interface Ethernet1/0/17                  
+#                                         
+interface Ethernet1/0/18                  
+#                                         
+interface Ethernet1/0/19                  
+#                                         
+interface Ethernet1/0/20                  
+#                                         
+interface Ethernet1/0/21                  
+#                                         
+interface Ethernet1/0/22                  
+#                                         
+interface Ethernet1/0/23                  
+ port access vlan 9                       
+#                                         
+interface Ethernet1/0/24                  
+ port link-type trunk                     
+ undo port trunk permit vlan 1            
+ port trunk permit vlan 9 801 to 802      
+ packet-filter inbound ip-group 3000 rule 1
+ packet-filter inbound ip-group 3000 rule 0
+ packet-filter outbound ip-group 3002 rule 0
+ packet-filter outbound ip-group 3001 rule 0
+ description TO-bluelink-test-2layer-switch
+#                                         
+interface GigabitEthernet1/1/1            
+#                                         
+interface GigabitEthernet1/1/2            
+#                                         
+interface GigabitEthernet1/1/3            
+#                                         
+interface GigabitEthernet1/1/4            
+#                                         
+ undo irf-fabric authentication-mode      
+#                                         
+interface NULL0                           
+#                                         
+ospf 1                                    
+ area 0.0.0.0                             
+  network 10.7.0.0 0.0.255.255            
+  network 10.226.80.0 0.0.7.255           
+#                                         
+ voice vlan mac-address 0001-e300-0000 mask ffff-ff00-0000
+#                                         
+ snmp-agent                               
+ snmp-agent local-engineid 800063A23CE5A67486576877
+ snmp-agent sys-info version v3           
+#                                         
+user-interface aux 0 7                    
+user-interface vty 0 4                    
+ authentication-mode scheme               
+#                                         
+return                                    
+                                          
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+[blue-link-test-3layer]
+#Apr  2 00:17:04:670 2000 blue-link-test-3layer L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.4(linkUp): portIndex is 4227810, ifAdminStatus is 1, ifOperStatus is 1
+
+#Apr  2 00:17:04:901 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.4(linkUp) Interface 95 is Up
+#Apr  2 00:17:05:042 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.4(linkUp) Interface 6431 is Up
+#Apr  2 00:17:05:183 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.4(linkUp) Interface 6439 is Up
+%Apr  2 00:17:05:324 2000 blue-link-test-3layer L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/24 is UP 
+
+%Apr  2 00:17:05:465 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface9 is UP 
+
+%Apr  2 00:17:05:605 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface9 is UP  
+
+%Apr  2 00:17:05:756 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface801 is UP 
+
+%Apr  2 00:17:05:896 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface801 is UP  
+
+%Apr  2 00:17:06:057 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface802 is UP 
+
+%Apr  2 00:17:06:198 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface802 is UP  
+
+#Apr  2 00:17:44:720 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.226.80.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 5 
+
+#Apr  2 00:17:45:021 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.7.0.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 5 
+
+#Apr  2 00:17:53:055 2000 blue-link-test-3layer L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.3(linkDown): portIndex is 4227810, ifAdminStatus is 1, ifOperStatus is 2
+
+#Apr  2 00:17:53:287 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.3(linkDown) Interface 95 is Down
+#Apr  2 00:17:53:428 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.3(linkDown) Interface 6431 is Down
+#Apr  2 00:17:53:579 2000 blue-link-test-3layer IFNET/5/TRAP:- 1 -1.3.6.1.6.3.1.1.5.3(linkDown) Interface 6439 is Down
+#Apr  2 00:17:53:731 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.7.0.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 1 
+
+#Apr  2 00:17:54:032 2000 blue-link-test-3layer OSPF/1/Trap16:- 1 -
+	 OSPF interface state changed 1.3.6.1.2.1.14.16.2.16(ospfIfStateChange) 
+	 IfIpAddress     = 10.226.80.1 
+	 IfAddrLessIndex = 0 
+	 RouterId = 192.168.8.1 
+	 IfState = 1 
+
+%Apr  2 00:17:54:333 2000 blue-link-test-3layer L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/24 is DOWN 
+
+%Apr  2 00:17:54:473 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface9 is DOWN 
+
+%Apr  2 00:17:54:614 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface9 is DOWN  
+
+%Apr  2 00:17:54:774 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface801 is DOWN 
+
+%Apr  2 00:17:54:925 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface801 is DOWN  
+
+%Apr  2 00:17:55:086 2000 blue-link-test-3layer L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface802 is DOWN 
+
+%Apr  2 00:17:55:236 2000 blue-link-test-3layer IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface802 is DOWN  
+
+[blue-link-test-3layer]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+********************************************************************************
+*  Copyright(c) 2004-2010 Hangzhou H3C Tech. Co., Ltd. All rights reserved.    *
+*  Without the owner's prior written consent,                                  *
+*  no decompiling or reverse-engineering shall be allowed.                     *
+********************************************************************************
+
+User interface aux0 is available.
+
+
+
+Please press ENTER.
+
+<blue-link-test-3layer>
+%Apr  2 00:36:56:823 2000 blue-link-test-3layer SHELL/5/LOGIN:- 1 - Console(aux0) in unit1 login
+<blue-link-test-3layer>die
+                       ^
+ % Unrecognized command found at '^' position.
+<blue-link-test-3layer>dir
+Directory of unit1>flash:/
+
+   1 (*)   -rw-   4595736  Mar 09 2010 12:00:00   s3600ei-cmw310-r1702p02-s168.bin
+   2       -rw-    882249  Mar 09 2010 12:00:00   h3c-http3.1.9-0014.web
+   3       -rw-      2211  Mar 09 2010 12:00:00   config.def
+   4 (*)   -rw-      4340  Apr 02 2000 00:05:24   config.cfg
+
+15367 KB total (9879 KB free)
+
+(*) -with main attribute   (b) -with backup attribute
+(*b) -with both main and backup attribute
+
+<blue-link-test-3layer>display ssh server
+                                          ^
+ % Incomplete command found at '^' position.
+<blue-link-test-3layer>ls
+                       ^
+ % Unrecognized command found at '^' position.
+<blue-link-test-3layer>display ssh server status
+ SSH version : 1.99 
+ SSH connection timeout : 60 seconds
+ SSH server key generating interval : 0 hours
+ SSH Authentication retries : 3 times
+ SFTP Server: Disable
+ SFTP idle timeout : 10 minutes
+<blue-link-test-3layer>ping
+                            ^
+ % Incomplete command found at '^' position.
+<blue-link-test-3layer>    
+<blue-link-test-3layer>
+<blue-link-test-3layer>
+<blue-link-test-3layer>
+<blue-link-test-3layer>
+<blue-link-test-3layer>
+<blue-link-test-3layer>reset save
+The saved configuration will be erased.			
+Are you sure?[Y/N]y
+Configuration in flash memory is being cleared.	
+Please wait ...
+...
+ Unit1 reset saved-configuration successfully.
+<blue-link-test-3layer>
+Starting......
+
+
+
+            ***********************************************************
+            *                                                         *
+            *         H3C S3600-28P-EI BOOTROM, Version 604           *
+            *                                                         *
+            ***********************************************************
+
+            Copyright(c) 2004-2010 Hangzhou H3C Technologies Co., Ltd.
+            Creation date   : Mar  9 2010, 19:16:10
+            CPU Clock Speed : 200MHz
+            BUS Clock Speed : 33MHz
+            Memory Size     : 64MB
+            Mac Address     : 3ce5a6748657
+
+
+Press Ctrl-B to enter Boot Menu... 0
+Auto-booting...
+Decompress Image...................................................................................................................................................................................................................................................................................................................................................................................................................................................................OK!
+Starting at 0x80100000...
+
+
+
+User interface aux0 is available.
+
+
+
+Press ENTER to get started.
+<H3C>
+%Apr  1 23:56:55:208 2000 H3C SHELL/5/LOGIN:- 1 - Console(aux0) in unit1 login
+<H3C>sys
+System View: return to User View with Ctrl+Z.
+[H3C]vlan 1 
+[H3C-vlan1]port Ethernet 1/0/1
+ Can't delete ports from or add ports to the default VLAN!
+[H3C-vlan1]quit               
+[H3C]vlan 10            
+[H3C-vlan10]port Ethernet 1/0/1
+[H3C-vlan10]quit
+[H3C]interface Vlan-interface 10
+[H3C-Vlan-interface10]ip address 192.168.1.1
+                                             ^
+ % Incomplete command found at '^' position.
+[H3C-Vlan-interface10]ip address 192.168.1.1 port 80
+                                             ^
+ % Wrong parameter found at '^' position.
+[H3C-Vlan-interface10]ip address 192.168.1.1 80     
+                                             ^
+ % Wrong parameter found at '^' position.
+[H3C-Vlan-interface10]ip address 192.168.1.1 255.255.255.0
+[H3C-Vlan-interface10]
+#Apr  2 00:04:28:787 2000 H3C L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.4(linkUp): portIndex is 4227634, ifAdminStatus is 1, ifOperStatus is 1
+
+%Apr  2 00:04:28:988 2000 H3C L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/2 is UP 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+********************************************************************************
+*  Copyright(c) 2004-2010 Hangzhou H3C Tech. Co., Ltd. All rights reserved.    *
+*  Without the owner's prior written consent,                                  *
+*  no decompiling or reverse-engineering shall be allowed.                     *
+********************************************************************************
+
+User interface aux0 is available.
+
+
+
+Please press ENTER.
+
+<H3C>
+%Apr  2 00:21:36:979 2000 H3C SHELL/5/LOGIN:- 1 - Console(aux0) in unit1 login
+<H3C>sys
+System View: return to User View with Ctrl+Z.
+[H3C]
+<H3C>reset save
+The saved configuration will be erased.			
+Are you sure?[Y/N]y
+Configuration in flash memory is being cleared.	
+Please wait ...
+
+ Unit1 file does not exist!
+<H3C>
+<H3C>
+<H3C>
+<H3C>
+<H3C>
+<H3C>
+<H3C>
+<H3C>
+Starting......
+
+
+
+            ***********************************************************
+            *                                                         *
+            *         H3C S3600-28P-EI BOOTROM, Version 604           *
+            *                                                         *
+            ***********************************************************
+
+            Copyright(c) 2004-2010 Hangzhou H3C Technologies Co., Ltd.
+            Creation date   : Mar  9 2010, 19:16:10
+            CPU Clock Speed : 200MHz
+            BUS Clock Speed : 33MHz
+            Memory Size     : 64MB
+            Mac Address     : 3ce5a6748657
+
+
+Press Ctrl-B to enter Boot Menu... 0
+Auto-booting...
+Decompress Image...................................................................................................................................................................................................................................................................................................................................................................................................................................................................OK!
+Starting at 0x80100000...
+
+
+
+User interface aux0 is available.
+
+
+
+Press ENTER to get started.
+<H3C>
+<H3C>
+%Apr  1 23:55:46:372 2000 H3C SHELL/5/LOGIN:- 1 - Console(aux0) in unit1 login
+<H3C>
+<H3C>
+<H3C>
+<H3C>
+<H3C>
+#Apr  1 23:55:48:824 2000 H3C L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.4(linkUp): portIndex is 4227634, ifAdminStatus is 1, ifOperStatus is 1
+
+%Apr  1 23:55:49:025 2000 H3C L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/2 is UP 
+
+<H3C>dir
+Directory of unit1>flash:/
+
+   1 (*)   -rw-   4595736  Mar 09 2010 12:00:00   s3600ei-cmw310-r1702p02-s168.bin
+   2       -rw-    882249  Mar 09 2010 12:00:00   h3c-http3.1.9-0014.web
+   3       -rw-      2211  Mar 09 2010 12:00:00   config.def
+
+15367 KB total (9884 KB free)
+
+(*) -with main attribute   (b) -with backup attribute
+(*b) -with both main and backup attribute
+
+<H3C>sys
+System View: return to User View with Ctrl+Z.
+[H3C]vlan 2
+[H3C-vlan2]port Ethernet 1/0/1
+[H3C-vlan2]quit
+[H3C]management-vlan 2
+[H3C]interface vlan 2
+[H3C-Vlan-interface2]ip address 10.7.100.177 255.255.0.0
+[H3C-Vlan-interface2]quit
+[H3C]save
+The configuration will be written to the device.			
+Are you sure?[Y/N]y
+Please input the file name(*.cfg)(To leave the existing filename 
+ unchanged press the enter key):
+Now saving current configuration to the device.	
+Saving configuration. Please wait...
+....
+ Unit1 save configuration flash:/config.cfg successfully
+
+[H3C]
+%Apr  1 23:59:20:332 2000 H3C CFM/3/CFM_LOG:- 1 -Unit1 saved configuration successfully.
+[H3C]
+[H3C]
+[H3C]
+[H3C]
+[H3C]
+[H3C]
+[H3C]
+[H3C]
+[H3C]
+[H3C]
+[H3C]
+#Apr  2 00:00:16:297 2000 H3C L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.3(linkDown): portIndex is 4227634, ifAdminStatus is 1, ifOperStatus is 2
+
+%Apr  2 00:00:16:508 2000 H3C L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/2 is DOWN 
+
+#Apr  2 00:00:19:631 2000 H3C L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.4(linkUp): portIndex is 4227650, ifAdminStatus is 1, ifOperStatus is 1
+
+%Apr  2 00:00:19:833 2000 H3C L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/4 is UP 
+
+#Apr  2 00:00:31:158 2000 H3C L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.3(linkDown): portIndex is 4227650, ifAdminStatus is 1, ifOperStatus is 2
+
+%Apr  2 00:00:31:368 2000 H3C L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/4 is DOWN 
+
+#Apr  2 00:00:34:411 2000 H3C L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.4(linkUp): portIndex is 4227634, ifAdminStatus is 1, ifOperStatus is 1
+
+%Apr  2 00:00:34:611 2000 H3C L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/2 is UP 
+
+#Apr  2 00:00:44:308 2000 H3C L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.3(linkDown): portIndex is 4227634, ifAdminStatus is 1, ifOperStatus is 2
+
+%Apr  2 00:00:44:519 2000 H3C L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/2 is DOWN 
+
+#Apr  2 00:00:49:221 2000 H3C L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.4(linkUp): portIndex is 4227626, ifAdminStatus is 1, ifOperStatus is 1
+
+%Apr  2 00:00:49:421 2000 H3C L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/1 is UP 
+
+%Apr  2 00:00:49:532 2000 H3C L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface2 is UP 
+
+%Apr  2 00:00:49:652 2000 H3C IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface2 is UP  
+
+[H3C]local-user blue-link
+New local user added.
+[H3C-luser-blue-link]local-user admin    
+New local user added.
+[H3C-luser-admin]password simple admin
+[H3C-luser-admin]
+%Apr  2 00:03:15:627 2000 H3C WEB/5/USER:- 1 -admin(10.7.100.146) login failed since invalid user name or password
+%Apr  2 00:03:20:776 2000 H3C WEB/5/USER:- 1 -admin(10.7.100.146) login failed since invalid user name or password
+%Apr  2 00:03:27:913 2000 H3C WEB/5/USER:- 1 -admin(10.7.100.146) login failed since invalid user name or password
+[H3C-luser-admin]quit
+[H3C]save
+The configuration will be written to the device.			
+Are you sure?[Y/N]y
+Please input the file name(*.cfg)(To leave the existing filename 
+ unchanged press the enter key):
+Now saving current configuration to the device.	
+Saving configuration. Please wait...
+......
+ Unit1 save configuration flash:/config.cfg successfully
+
+[H3C]
+%Apr  2 00:04:10:809 2000 H3C CFM/3/CFM_LOG:- 1 -Unit1 saved configuration successfully.
+%Apr  2 00:04:13:634 2000 H3C WEB/5/USER:- 1 -admin(10.7.100.146) login failed since invalid user name or password
+%Apr  2 00:04:45:786 2000 H3C WEB/5/USER:- 1 -admin(10.7.100.146) login failed since invalid user name or password
+[H3C]local-user admin     
+[H3C-luser-admin]password simple 123  
+[H3C-luser-admin]
+%Apr  2 00:05:28:654 2000 H3C WEB/5/USER:- 1 -admin(10.7.100.146) login failed since invalid user name or password
+[H3C-luser-admin]service-type telnet level 3
+[H3C-luser-admin]password simple 123        
+[H3C-luser-admin]
+%Apr  2 00:06:42:973 2000 H3C WEB/5/USER:- 1 -admin(10.7.100.146) login succeed
+[H3C-luser-admin]quit
+[H3C]save
+The configuration will be written to the device.			
+Are you sure?[Y/N]y
+Please input the file name(*.cfg)(To leave the existing filename 
+ unchanged press the enter key):
+Now saving current configuration to the device.	
+Saving configuration. Please wait...
+......
+#Apr  2 00:07:10:120 2000 H3C L2INF/2/PORT LINK STATUS CHANGE:- 1 -
+ Trap 1.3.6.1.6.3.1.1.5.3(linkDown): portIndex is 4227626, ifAdminStatus is 1, ifOperStatus is 2
+
+%Apr  2 00:07:10:328 2000 H3C L2INF/5/PORT LINK STATUS CHANGE:- 1 -
+ Ethernet1/0/1 is DOWN 
+
+%Apr  2 00:07:10:448 2000 H3C L2INF/5/VLANIF LINK STATUS CHANGE:- 1 -
+ Vlan-interface2 is DOWN 
+
+%Apr  2 00:07:10:569 2000 H3C IFNET/5/UPDOWN:- 1 -Line protocol on the interface Vlan-interface2 is DOWN  
+
+ Unit1 save configuration flash:/config.cfg successfully
+
+[H3C]
+%Apr  2 00:07:10:710 2000 H3C CFM/3/CFM_LOG:- 1 -Unit1 saved configuration successfully.
+
+
+
+需要注册码
+用户名：blog.itful.com
+注册码：HHHIQ-KHHGS-RMLWE-MSMPR-UPYHJ-GTRLG-MJKEJ-WJIVL
