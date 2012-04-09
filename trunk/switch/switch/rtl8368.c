@@ -985,6 +985,20 @@ const char acl_template_set_usage[] =
 static int acl_template_set(int argc, char *argv[]){
 	int rv;
 	rtk_filter_template_t aclTemplate;
+	int index = 0;
+	
+	memset(&aclTemplate, 0x00, sizeof(rtk_filter_template_t));
+
+	aclTemplate.Index = 2;
+	aclTemplate.fieldType[0] = FILTER_FIELD_RAW_DMAC_15_0;
+	aclTemplate.fieldType[1] = FILTER_FIELD_RAW_DMAC_31_16;
+	aclTemplate.fieldType[2] = FILTER_FIELD_RAW_DMAC_47_32;
+	aclTemplate.fieldType[3] = FILTER_FIELD_RAW_SMAC_15_0;
+	aclTemplate.fieldType[4] = FILTER_FIELD_RAW_SMAC_31_16;
+	aclTemplate.fieldType[5] = FILTER_FIELD_RAW_SMAC_47_32;
+	aclTemplate.fieldType[6] = FILTER_FIELD_RAW_CTAG;
+	aclTemplate.fieldType[7] = FILTER_FIELD_RAW_STAG;
+
 	
 	rv = rtk_filter_igrAcl_template_set(&aclTemplate);
 	if(rv){	
