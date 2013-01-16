@@ -1,3 +1,4 @@
+net stop LkCitadelServer
 net stop NIDomainService 
 net stop nimDNSResponder
 net stop lkTimeSync
